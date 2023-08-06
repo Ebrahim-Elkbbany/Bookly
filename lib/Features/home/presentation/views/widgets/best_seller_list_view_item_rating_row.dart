@@ -5,13 +5,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class RatingRow extends StatelessWidget {
-  const RatingRow({Key? key}) : super(key: key);
-
+  const RatingRow({Key? key,  this.mainAxisAlignment=MainAxisAlignment.start}) : super(key: key);
+   final MainAxisAlignment mainAxisAlignment ;
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
+      mainAxisAlignment: mainAxisAlignment,
+      children:  [
         const Icon(
+          size: 14,
           FontAwesomeIcons.solidStar,
           color: Color(
             0xffFFDD4F,
@@ -27,10 +29,13 @@ class RatingRow extends StatelessWidget {
         const SizedBox(
           width: 5,
         ),
-        Text(
-          '(923)',
-          style: Styles.textStyle14.copyWith(
-            color: const Color(0xff707070),
+        Opacity(
+          opacity: 0.5,
+          child: Text(
+            '(923)',
+            style: Styles.textStyle14.copyWith(
+              fontWeight: FontWeight.w600,
+            ),
           ),
         ),
       ],
