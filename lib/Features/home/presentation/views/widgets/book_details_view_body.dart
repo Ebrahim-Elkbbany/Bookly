@@ -1,4 +1,5 @@
 import 'package:bookly/Features/home/presentation/views/widgets/best_seller_list_view_item_rating_row.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/books_action_buttons.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -33,7 +34,7 @@ class BookDetailsViewBody extends StatelessWidget {
               height: 6,
             ),
             Opacity(
-              opacity:  0.7,
+              opacity: 0.7,
               child: Text(
                 'Rudyard Kipling',
                 style: Styles.textStyle18.copyWith(
@@ -46,9 +47,17 @@ class BookDetailsViewBody extends StatelessWidget {
               height: 18,
             ),
             const RatingRow(mainAxisAlignment: MainAxisAlignment.center),
+            const SizedBox(
+              height: 37,
+            ),
+            const BooksActionButtons(),
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
