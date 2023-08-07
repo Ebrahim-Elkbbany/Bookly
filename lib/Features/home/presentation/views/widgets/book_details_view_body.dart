@@ -1,4 +1,5 @@
 import 'package:bookly/Features/home/presentation/views/widgets/best_seller_list_view_item_rating_row.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/book_details_list_view.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/books_action_buttons.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_book_details_view_app_bar.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
@@ -50,13 +51,41 @@ class BookDetailsViewBody extends StatelessWidget {
             const SizedBox(
               height: 37,
             ),
-            const BooksActionButtons(),
+            const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 8.0),
+              child: BooksActionButtons(),
+            ),
+            const Expanded(
+              child: SizedBox(
+                height: 50,
+              ),
+            ),
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
+                'You can also like',
+                style: Styles.textStyle14.copyWith(
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            const BooksDetailsListView(),
+            const SizedBox(
+              height: 40,
+            ),
+
           ],
         ),
       ),
     );
   }
 }
+
+
+
 
 
 
