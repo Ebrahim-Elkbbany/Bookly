@@ -28,7 +28,10 @@ class HomeViewBody extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            BestSellerListView(),
+            Padding(
+              padding:  EdgeInsets.symmetric(horizontal: 30),
+              child: BestSellerListView(),
+            ),
           ],
         ),
       ),
