@@ -14,6 +14,7 @@ class HomeViewBody extends StatelessWidget {
 
     return const SafeArea(
       child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

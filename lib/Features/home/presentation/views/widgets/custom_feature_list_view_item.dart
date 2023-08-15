@@ -1,21 +1,30 @@
+import 'package:bookly/core/utils/styles.dart';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CustomFeatureListViewItem extends StatelessWidget {
-  const CustomFeatureListViewItem({Key? key, required this.image}) : super(key: key);
-  final String  image;
+  const CustomFeatureListViewItem({Key? key, required this.imageUrl})
+      : super(key: key);
+  final String imageUrl;
+
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-      aspectRatio: 2.6 / 4,
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(16),
-          image:  DecorationImage(
-            fit: BoxFit.fill,
-            image: NetworkImage(
-              image ,
-            ),
-          ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(16),
+      child: AspectRatio(
+        aspectRatio: 2.6 / 4,
+        child: CachedNetworkImage(
+           errorWidget: (context, url, error) {
+             return  const Column(
+               mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.error),
+                Text('ERROR',style: Styles.textStyle14),
+              ],
+             );
+           },
+          imageUrl: imageUrl,
+          fit: BoxFit.cover,
         ),
       ),
     );

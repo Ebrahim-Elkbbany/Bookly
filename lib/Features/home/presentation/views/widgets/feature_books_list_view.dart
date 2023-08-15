@@ -17,11 +17,11 @@ class FeatureBooksListView extends StatelessWidget {
             child: ListView.separated(
               physics: const BouncingScrollPhysics(),
               itemCount: state.books.length,
-              separatorBuilder: (context, index) => const SizedBox(width: 12),
+              separatorBuilder: (context, index) => const SizedBox(width: 15),
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               itemBuilder: (context, index) => CustomFeatureListViewItem(
-                image: state.books[index].volumeInfo.imageLinks.thumbnail,
+                imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
               ),
             ),
           );

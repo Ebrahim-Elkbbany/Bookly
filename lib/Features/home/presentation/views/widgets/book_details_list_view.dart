@@ -15,7 +15,7 @@ class BooksDetailsListView extends StatelessWidget {
         scrollDirection: Axis.horizontal,
         padding: const EdgeInsets.symmetric(horizontal: 5),
         itemBuilder: (context, index) => const CustomFeatureListViewItem(
-          image: 'https://img.freepik.com/free-psd/investigation-flyer-template-theme_23-2148628043.jpg?w=740&t=st=1692119741~exp=1692120341~hmac=e20e393b1fd2742afbd2ae5d5e0a0974508904388fcb8403cf781cd4892cd397',
+          imageUrl: 'https://img.freepik.com/free-psd/investigation-flyer-template-theme_23-2148628043.jpg?w=740&t=st=1692119741~exp=1692120341~hmac=e20e393b1fd2742afbd2ae5d5e0a0974508904388fcb8403cf781cd4892cd397',
         ),
       ),
     );
