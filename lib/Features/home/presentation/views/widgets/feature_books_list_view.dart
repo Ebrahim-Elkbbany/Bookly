@@ -1,5 +1,6 @@
 import 'package:bookly/Features/home/presentation/manger/feature_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
+import 'package:bookly/core/widgets/custom_circular_indicator.dart';
 import 'package:bookly/core/widgets/custom_error_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,11 +29,10 @@ class FeatureBooksListView extends StatelessWidget {
         } else if (state is FeaturedBooksFailure) {
           return CustomErrorWidget(errorMessage: state.errorMessage);
         } else {
-          return const Center(
-            child: CircularProgressIndicator(),
-          );
+          return const CustomCircularIndicator();
         }
       },
     );
   }
 }
+

@@ -1,4 +1,5 @@
-import 'package:bookly/Features/home/presentation/views/widgets/best_seller_list_view_item.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/newest_books_list_view_item.dart';
+import 'package:bookly/core/widgets/custom_circular_indicator.dart';
 import 'package:flutter/material.dart';
 
 class SearchResultListView extends StatelessWidget {
@@ -10,7 +11,13 @@ class SearchResultListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) => const BookListViewItem(),
+      itemBuilder: (context, index) =>  CustomCircularIndicator(),
+      // BookListViewItem(
+      //   bookName: '',
+      //   authorName: '',
+      //   imageUrl: '',
+      //
+      // ),
       separatorBuilder: (context, index) => const SizedBox(height: 20),
       itemCount: 5,
     );

@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presentation/views/widgets/best_seller_list_view_item_rating_row.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/nesest_books_list_view_item_rating_row.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/book_action_buttons.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:bookly/core/utils/styles.dart';
@@ -45,6 +45,7 @@ class BookDetailsViewSection extends StatelessWidget {
         ),
         const RatingRow(
           mainAxisAlignment: MainAxisAlignment.center,
+          pageCount: 0,
         ),
         const SizedBox(
           height: 37,
