@@ -22,7 +22,7 @@ class FeatureBooksListView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               padding: const EdgeInsets.symmetric(horizontal: 20),
               itemBuilder: (context, index) => CustomFeatureListViewItem(
-                imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                imageUrl: state.books[index].volumeInfo.imageLinks?.thumbnail ?? '',
               ),
             ),
           );

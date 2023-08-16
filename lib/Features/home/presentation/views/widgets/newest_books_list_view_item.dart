@@ -1,4 +1,6 @@
-import 'package:bookly/Features/home/data/model_test.dart';
+
+
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/nesest_books_list_view_item_rating_row.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:bookly/constants.dart';
@@ -26,7 +28,7 @@ class BookListViewItem extends StatelessWidget {
           children: [
             CustomFeatureListViewItem(
               borderRadius: 8,
-              imageUrl: bookModel.volumeInfo.imageLinks.thumbnail,
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??'',
             ),
             const SizedBox(
               width: 30,
@@ -39,7 +41,7 @@ class BookListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
-                      bookModel.volumeInfo.title!,
+                      bookModel.volumeInfo.title?? '',
                       style: Styles.textStyle20
                           .copyWith(fontFamily: kGTSectraFont),
                       maxLines: 2,
@@ -50,7 +52,7 @@ class BookListViewItem extends StatelessWidget {
                     height: 3,
                   ),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors?[0] ??'',
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(
@@ -67,7 +69,7 @@ class BookListViewItem extends StatelessWidget {
                         ),
                         const Spacer(),
                         RatingRow(
-                          pageCount: bookModel.volumeInfo.pageCount!,
+                          pageCount: bookModel.volumeInfo.pageCount ?? 0  ,
                         ),
                       ],
                     ),
@@ -81,3 +83,5 @@ class BookListViewItem extends StatelessWidget {
     );
   }
 }
+
+

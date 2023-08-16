@@ -1,6 +1,6 @@
-import 'package:bookly/Features/home/presentation/views/widgets/newest_books_list_view_item.dart';
-import 'package:bookly/core/widgets/custom_circular_indicator.dart';
+
 import 'package:flutter/material.dart';
+import 'package:shimmer/shimmer.dart';
 
 class SearchResultListView extends StatelessWidget {
   const SearchResultListView({Key? key}) : super(key: key);
@@ -11,7 +11,23 @@ class SearchResultListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       padding: EdgeInsets.zero,
-      itemBuilder: (context, index) =>  CustomCircularIndicator(),
+      itemBuilder: (context, index) =>  SizedBox(
+        width: 200.0,
+        height: 100.0,
+        child: Shimmer.fromColors(
+          baseColor: Colors.red,
+          highlightColor: Colors.yellow,
+          child: const Text(
+            'Shimmer',
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              fontSize: 40.0,
+              fontWeight:
+              FontWeight.bold,
+            ),
+          ),
+        ),
+      ),
       // BookListViewItem(
       //   bookName: '',
       //   authorName: '',
@@ -23,3 +39,5 @@ class SearchResultListView extends StatelessWidget {
     );
   }
 }
+
+
