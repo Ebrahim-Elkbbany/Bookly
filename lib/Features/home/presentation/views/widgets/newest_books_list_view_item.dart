@@ -1,7 +1,7 @@
 
 
 import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
-import 'package:bookly/Features/home/presentation/views/widgets/nesest_books_list_view_item_rating_row.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/newest_books_list_view_item_rating_row.dart';
 import 'package:bookly/Features/home/presentation/views/widgets/custom_feature_list_view_item.dart';
 import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/app_router.dart';
@@ -20,7 +20,7 @@ class BookListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        GoRouter.of(context).push(AppRouter.kBookDetailsViewPath);
+        GoRouter.of(context).push(AppRouter.kBookDetailsViewPath,extra: bookModel);
       },
       child: SizedBox(
         height: 125,
@@ -38,6 +38,7 @@ class BookListViewItem extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+
                   SizedBox(
                     width: MediaQuery.of(context).size.width * 0.5,
                     child: Text(
@@ -51,9 +52,12 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
+                  if( bookModel.volumeInfo.authors != null)
                   Text(
                     bookModel.volumeInfo.authors?[0] ??'',
                     style: Styles.textStyle14,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
                   ),
                   const SizedBox(
                     height: 3,

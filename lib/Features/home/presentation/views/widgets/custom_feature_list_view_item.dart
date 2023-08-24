@@ -24,7 +24,7 @@ class CustomFeatureListViewItem extends StatelessWidget {
               ],
              );
            },
-          imageUrl: imageUrl,
+          imageUrl:  imageUrl,
           fit: BoxFit.fill,
         ),
       ),

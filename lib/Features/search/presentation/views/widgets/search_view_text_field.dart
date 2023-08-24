@@ -1,13 +1,23 @@
+import 'package:bookly/Features/search/presentation/manager/search_cubit/search_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SearchViewTextField extends StatelessWidget {
-  const SearchViewTextField({Key? key}) : super(key: key);
+class SearchViewTextField extends StatefulWidget {
+  const SearchViewTextField({
+    Key? key,
+    required this.cubit,
+  }) : super(key: key);
+  final SearchCubit cubit;
 
+  @override
+  State<SearchViewTextField> createState() => _SearchViewTextFieldState();
+}
+
+class _SearchViewTextFieldState extends State<SearchViewTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      cursorColor:Colors.white.withOpacity(0.5) ,
+      cursorColor: Colors.white.withOpacity(0.5),
       decoration: InputDecoration(
         enabledBorder: buildOutlineInputBorder(),
         focusedBorder: buildOutlineInputBorder(),
@@ -18,6 +28,11 @@ class SearchViewTextField extends StatelessWidget {
           size: 22,
         ),
       ),
+      onSubmitted: (String searchText) {
+        if (searchText != '') {
+          widget.cubit.fetchBooksSearch(searchText);
+        }
+      },
     );
   }
 
@@ -28,4 +43,3 @@ class SearchViewTextField extends StatelessWidget {
     );
   }
 }
-
